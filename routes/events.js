@@ -4,13 +4,13 @@
 */
 const {Router}=require('express');
 const {check}=require('express-validator');
-const {validarJWT}=require('../middlewares/validar-jwt');
-//Al hacer un middleware significa que tengo que colocarselo a cada una de las 4 peticiones router de Abajo
+const {isDate}=require('../helpers/isDate');
 
 //middleware que tengo que llamar después de todos los checks
 const {validarCampos}=require('../middlewares/validar-campos');
 
-const {isDate}=require('../helpers/isDate');
+const {validarJWT}=require('../middlewares/validar-jwt');
+//Al hacer un middleware significa que tengo que colocarselo a cada una de las 4 peticiones router de Abajo
 
 const {getEventos, crearEvento, actualizarEvento, eliminarEvento}=require('../controllers/events');
 

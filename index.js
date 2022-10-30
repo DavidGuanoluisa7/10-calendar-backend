@@ -1,10 +1,13 @@
 const express=require('express');
-const cors=require('cors');
-const { dbConnection } = require('./database/config');
 
 //mandamos a llamar este paquete que instalamos con npm i dotenv
 //env: significa environment
 require('dotenv').config();
+
+const cors=require('cors');
+const { dbConnection } = require('./database/config');
+
+
 
 //Crear el servidor de express
 const app=express();
