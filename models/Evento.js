@@ -1,7 +1,5 @@
 
 const {Schema, model}=require('mongoose');
-const { trusted } = require('mongoose');
-
 
 const EventoSchema=Schema({
 

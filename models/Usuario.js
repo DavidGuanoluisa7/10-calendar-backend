@@ -1,15 +1,13 @@
 
 // Schema: es como la información que yo voy a guardar en la Base de Datos
 const {Schema, model}=require('mongoose');
-const { trusted } = require('mongoose');
-
 
 const UsuarioSchema=Schema({
 
     //Cualquier objeto de mis usuarios ó UsuarioSchema va tener todo lo de Abajo, que es name, email y password
     name:{
         type: String,
-        required: trusted
+        required: true
     },
     email:{
         type:String,
