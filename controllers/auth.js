@@ -55,7 +55,7 @@ const crearUsuario=async(req, res=response)=>{
         if(usuario){
             return res.status(400).json({
                 ok: false,
-                masg: 'Un usuario existe con ese Correo'
+                msg: 'El usuario ya Existe'
             });
         }
 
@@ -111,7 +111,7 @@ const loginUsuario=async(req, res=response)=>{
         if(!usuario){
             return res.status(400).json({
                 ok: false,
-                masg: 'Un usuario no existe con ese Email'
+                msg: 'Un usuario no existe con ese Email'
             });
         }
 
@@ -170,7 +170,9 @@ const revalidarToken=async(req, res=response)=>{
 
 
     res.json({
-        ok: true,       
+        ok: true, 
+        uid, 
+        name,      
         token
     })
 
