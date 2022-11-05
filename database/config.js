@@ -8,7 +8,7 @@ const dbConnection= async() => {
     try {
 
         //xq todas las 4 líneas de abajo va a retornar  un Promesa puedo utilizar un await
-        await mongoose.connect(process.env.DB_CNN, {
+        await mongoose.connect(process.env.DB_CNN || 'mongodb+srv://mern_user:OSABa4VvARMQB5f8@calendardb.grewmp5.mongodb.net/?retryWrites=true&w=majority' , {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             // useCreateIndex : true,
