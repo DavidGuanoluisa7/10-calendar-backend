@@ -40,7 +40,16 @@ app.use(express.json());
 //todo lo que ('./routes/auth') exporte, va a ser hablitado en esta ruta '/api/auth'
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/events', require('./routes/events'));
+//'/api/auth' y '/api/events': son endpoints
 
+
+// *: significa cualquier ruta de las no especificadas allá arriba ('/api/auth' y '/api/events', tal vez sólo estas 2 y no ->
+// las de alado también)
+//Vamos a regresar el archivo index.html de la carpeta public, es lo que hacemos dentro de { }
+app.get('*', (req, res)=>{
+    res.sendFile(__dirname + '/public/index.html');
+    //__dirname: es el path inicial que necesitamos para especificar el archivo que queremos Desplegar
+});
 
 
 //Escuchar peticiones
